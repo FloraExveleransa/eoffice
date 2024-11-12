@@ -6,7 +6,7 @@
          <div class="navbar-brand">
            <a class="navbar-brand brand-logo" href="index.html">
              <div class="sidebar-header">
-                  <img src="<?php echo base_url('images/pt.jpg') ?>" alt="logo">
+                  <img src="<?php echo base_url('images/66.jpg') ?>" alt="logo">
                 <div style="font-size: 20px; color: #333; font-weight: bold;">
                   <?= $setting->nama_toko ?>
                 </div>
@@ -245,29 +245,6 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
-  <?php
-        if(session()->get('level')==1){
-          ?>
-               <li class="nav-item">
-  <a class="nav-link" href="users" aria-controls="ui-basic">
-    <i class="fas fa-users menu-icon"></i>
-    <span class="menu-title">Data users</span>
-    </a>
-</li>
-<?php } ?>
-
-
-  <?php
-        if(session()->get('level')==1){
-          ?>
-          <li class="nav-item">
-  <a class="nav-link" href="karyawan" aria-controls="ui-basic">
-    <i class="fas fa-user-tie menu-icon"></i>
-    <span class="menu-title">Data karyawan</span>
-    </a>
-</li>
-<?php } ?>
- 
 
 
  <?php
@@ -276,7 +253,7 @@
 <li class="nav-item">
   <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
     <i class="fas fa-box menu-icon"></i>
-    <span class="menu-title">Data barang</span>
+    <span class="menu-title">Persuratan</span>
   </a>
 </li>
 
@@ -284,105 +261,116 @@
             </li>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="bm">Data Barang Masuk</a></li>
+                <li class="nav-item"> <a class="nav-link" href="manajemen">Setting Manajemen Surat</a></li>
               </ul>
             </div>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="bk"> Data Barang Keluar</a></li>
+                <li class="nav-item"> <a class="nav-link" href="suratmasuk"> Surat Masuk</a></li>
               </ul>
             </div>
           </li>
-
+             <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="suratkeluar"> Surat Keluar</a></li>
+              </ul>
+            </div>
+          </li>
+           <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="arsipsurat"> Arsip Surat</a></li>
+              </ul>
+            </div>
+          </li>
 <?php } ?>
 
-
-  
 <?php
+        if(session()->get('level')==1){
+          ?>
+            <li class="nav-item">
+  <a class="nav-link" href="cuti" aria-controls="ui-basic">
+    <i class="fas fa-building menu-icon"></i>
+    <span class="menu-title">Permohonan Cuti</span>
+    
+  </a>
+</li>
+  <?php } ?>
+ <!--  <?php
         if(session()->get('level')==1){
           ?>
             <li class="nav-item">
   <a class="nav-link" href="pt" aria-controls="ui-basic">
     <i class="fas fa-building menu-icon"></i>
-    <span class="menu-title">Data Perusahaan</span>
-    
-  </a>
-</li>
-  <?php } ?>
-
-  <?php
-        if(session()->get('level')==5){
-          ?>
-            <li class="nav-item">
-  <a class="nav-link" href="barang" aria-controls="ui-basic">
-    <i class="fas fa-building menu-icon"></i>
-    <span class="menu-title">Order Barang</span>
-    
-  </a>
-</li>
-  <?php } ?>
-
-  <!-- <?php
-        if(session()->get('level')==5){
-          ?>
-            <li class="nav-item">
-  <a class="nav-link" href="transaksi" aria-controls="ui-basic">
-    <i class="fas fa-building menu-icon"></i>
-    <span class="menu-title">Transaksi</span>
+    <span class="menu-title">Instansi</span>
     
   </a>
 </li>
   <?php } ?>
  -->
   <?php
-        if(session()->get('level')==5){ //khusus pembeli
+        if(session()->get('level')==1){
           ?>
             <li class="nav-item">
-  <a class="nav-link" href="historypesanan" aria-controls="ui-basic">
+  <a class="nav-link" href="pegawai" aria-controls="ui-basic">
     <i class="fas fa-building menu-icon"></i>
-    <span class="menu-title">History</span>
+    <span class="menu-title">Kepegawaian</span>
     
   </a>
 </li>
   <?php } ?>
+  
 
+  <?php
+          if(session()->get('level')==1 || session()->get('level') == 2){
+            ?>
+<li class="nav-item">
+  <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+    <i class="fas fa-box menu-icon"></i>
+    <span class="menu-title">Riwayat</span>
+  </a>
+</li>
 
+            </a>
+            </li>
+            <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="rpegawai">Pegawai</a></li>
+              </ul>
+            </div>
+            <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="rsuratmasuk"> Surat Masuk</a></li>
+              </ul>
+            </div>
+          </li>
+           <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="rsuratkeluar"> Surat Keluar</a></li>
+              </ul>
+            </div>
+          </li>
+           <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="activity"> Login</a></li>
+              </ul>
+            </div>
+          </li>
+            
+<?php } ?>
 
 <?php
         if(session()->get('level')==1){
-          ?> 
-          <li class="nav-item">
-  <a class="nav-link" href="historypesanan" aria-controls="ui-basic">
-    <i class="fas fa-user-tie menu-icon"></i>
-    <span class="menu-title"> Pesanan Customer </span>
-    </a>
-</li>
-<?php } ?>
-
-
- <?php
-        if(session()->get('level')==1 || session()->get('level') == 2){
           ?>
             <li class="nav-item">
-  <a class="nav-link" href="barang" aria-controls="ui-basic">
-    <i class="fas fa-tag menu-icon"></i>
-    <span class="menu-title">Barang Jual</span>
+  <a class="nav-link" href="pt" aria-controls="ui-basic">
+    <i class="fas fa-building menu-icon"></i>
+    <span class="menu-title">e-Profile </span>
     
   </a>
 </li>
   <?php } ?>
 
-  <?php
-if(session()->get('level') == 2 ) {
-?>
-<li class="nav-item">
-  <a class="nav-link" href="pengiriman" aria-controls="ui-basic">
-    <i class="fas fa-truck menu-icon"></i> <!-- Changed icon -->
-    <span class="menu-title">Pengiriman</span>
-  </a>
-</li>
-<?php } ?>
-
+ 
 
 <?php
 if(session()->get('level') == 2) {
@@ -396,89 +384,7 @@ if(session()->get('level') == 2) {
 <?php } ?>
 
 
-
-
-
-<?php
-  if(session()->get('level') == 1){
-    ?>
-<li class="nav-item">
-  <a class="nav-link" data-toggle="collapse" href="#reports" aria-expanded="false" aria-controls="reports">
-    <i class="fas fa-file-alt menu-icon"></i>
-    <span class="menu-title">Laporan</span>
-    <i class="menu-arrow"></i>
-  </a>
-  <div class="collapse" id="reports">
-    <ul class="nav flex-column sub-menu">
-      <li class="nav-item">
-        <!-- <a class="nav-link" href="laporantransaksi">
-          Transaksi Pembayaran
-        </a> -->
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="laporanbm">
-          Barang Masuk
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="laporanbk">
-          Barang Keluar
-        </a>
-      </li>
-    </ul>
-  </div>
-</li>
- <?php } ?>
-
-
-
-  
-
-
-  <?php
-        if(session()->get('level')==1){ //khusus admin
-          ?>           <!-- Dropdown Menu untuk Laporan -->
-</li><li class="nav-item">
-  <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
-    <i class="fas fa-history menu-icon"></i>
-    <span class="menu-title">History</span>
-    <i class="menu-arrow"></i>
-  </a>
-</li>
-</a>
-<?php } ?>
-
-
-
-           <div class="collapse" id="icons">
-  <ul class="nav flex-column sub-menu">
-    <li class="nav-item">
-      <a class="nav-link" href="/hslogin">
-    <i class="fas fa-sign-in-alt"></i> Login
-</a>
-<!-- 
-           <div class="collapse" id="icons">
-  <ul class="nav flex-column sub-menu">
-    <li class="nav-item">
-      <a class="nav-link" href="history_hapus">
-    <i class="fas fa-sign-in-alt"></i> Delete
-</a>
- -->
-    </li>
-  </ul>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-            <div class="collapse" id="auth">
+             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
                 
                 
